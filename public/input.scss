@@ -1,5 +1,5 @@
 $box-shadow : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+@import url('https://fonts.googleapis.com/css2?family=Texturina&display=swap');
 
 @mixin custom-padding() {
     padding-right: 20px;
@@ -12,6 +12,51 @@ $box-shadow : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 @mixin  custom-login-margin {
     margin-bottom: 50px;
     margin-top: 150px;
+}
+
+.navbar-container{
+    color: white;
+    opacity: 0.8;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    align-items: center;
+    font-family: 'Texturina', serif;
+    background-image: url("https://us.123rf.com/450wm/mimacz/mimacz1705/mimacz170500034/77914675-abstract-dark-background-connecting-dots-star-theme.jpg?ver=6");
+
+    .create-room-input{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+.container-product{
+
+    margin-bottom: 20px;
+    margin: auto;
+    max-width: 1500px;
+    display: flex;
+    @include custom-padding();
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    h1{
+        text-align: center;
+        font-family: 'Texturina', serif;
+    }
+
+    .card{
+        padding-top: 10px;
+        margin-bottom: 30px;
+        margin-left: 10px;
+        color: white;
+        box-shadow: $box-shadow;
+        font-family: 'Texturina', serif;
+        background-image: url("https://us.123rf.com/450wm/mimacz/mimacz1705/mimacz170500034/77914675-abstract-dark-background-connecting-dots-star-theme.jpg?ver=6");
+
+    }
 }
 
 .container-login{
