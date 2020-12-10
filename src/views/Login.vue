@@ -4,10 +4,10 @@
             <h1>{{welcomeMessage}}</h1>
         </div>
         <div class="card-body">
-            <form action="">
+            <form @submit.prevent="insertUser">
                 <div class="email mb-3">
                     <h5>Insert Your Name</h5>
-                    <input type="text" name="text" class="container-fluid">
+                    <input v-model="userName" type="text" name="text" class="container-fluid">
                 </div>
                 <div class="button-login row">
                     <button class="btn btn-primary mt-3">Lets Play</button>
