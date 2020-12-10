@@ -1,0 +1,22 @@
+.container-login {
+  width: 700px;
+  height: 25rem;
+  margin: auto;
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 150px;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.container-login .card-header {
+  background-color: #019726;
+}
+.container-login .card-body {
+  background-color: #464444;
+  color: white;
+}
+.container-login h1 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=output.css.map */
