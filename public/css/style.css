@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+}
+
+.img-char {
+  height: 120px;
+  width: 50px;
+}
+
+.bg-orange {
+  background-color: orange;
+}
+
+.fontbtn {
+  width: 400px;
+}
