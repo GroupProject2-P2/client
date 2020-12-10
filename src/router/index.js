@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import RoomDasboard from '../views/RoomDasboard'
 import Login from '../views/Login'
+import GamePlay from '../views/GamePlay'
 Vue.use(VueRouter)
 
 const routes = [
@@ -9,6 +10,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/play',
+    name: 'gamePlay',
+    component: GamePlay
   },
   {
     path: '/about',
