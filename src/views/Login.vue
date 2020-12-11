@@ -32,6 +32,7 @@ export default {
   methods: {
     insertUser () {
       this.$socket.emit('login',this.userName)
+      this.$router.push('/waitingroom')
     }
   },
   computed: {
