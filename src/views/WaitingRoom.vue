@@ -73,7 +73,7 @@ export default {
         <li>Setelah game dimulai, nanti akan diminta pilih jawaban <b>Benar atau Salah</b></li>
         <li>Yang paling cepat menjawab dia yang akan mendapatkan Nilai</li>
         <li>Jika pertanyaannya benar terjawab akan mendapatkan nilai 10 jika salah akan dikurangi 3</li>
-        <li>Game akan berhenti jika ada player yang mendapatkan <b>score 100</b></li>
+        <li>Game akan berhenti jika ada player yang mendapatkan <b>score 50</b></li>
       </ul>
       `,
       confirmButtonText: 'OK'
