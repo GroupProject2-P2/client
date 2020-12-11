@@ -8,78 +8,58 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-3">
+        <!-- looping -->
+        <div v-for="(player, index) in 4" :key="index" class="col-3">
           <div class="card border-primary" style="">
-                <img class="card-img-top img-char p-0" src="https://ih1.redbubble.net/image.1720409113.7485/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Card image cap">
+                <img class="card-img-top img-char p-0" v-if="joinUsers[index]" :src="image_player[index]">
+                <img class="card-img-top img-char p-0" v-else :src="image_empty">
             <div class="card-body p-1">
-              <h5 class="card-title">Player 1</h5>
+              <h5 class="card-title">{{ joinUsers[index] ? joinUsers[index].username : 'Empty' }}</h5>
               <div class="bg-primary text-white card">
                 <h4>Status</h4>
               </div>
               <div class="border-warning card">
-                <h1>Ready</h1>
+                <h2>{{ joinUsers[index] ? joinUsers[index].status : 'Waiting'}}</h2>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-3">
-          <div class="card border-secondary" style="">
-            <img class="card-img-top img-char p-0" src="https://ih1.redbubble.net/image.1720403004.7334/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Card image cap">
-            <div class="card-body p-1">
-              <h5 class="card-title">Player 2</h5>
-              <div class="bg-secondary text-white card">
-                <h4>Status</h4>
-              </div>
-              <div class="border-warning card">
-                <h1>Ready</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card border-warning" style="">
-            <img class="card-img-top img-char p-0" src="https://cdn4.iconfinder.com/data/icons/political-elections/50/48-512.png" alt="Card image cap">
-            <div class="card-body p-1">
-              <h5 class="card-title">Waiting</h5>
-              <div class="bg-warning text-white card">
-                <h4>Status</h4>
-              </div>
-              <div class="border-warning card">
-                <h1>Empty</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card border-success" style="">
-            <img class="card-img-top img-char p-0" src="https://cdn4.iconfinder.com/data/icons/political-elections/50/48-512.png" alt="Card image cap">
-            <div class="card-body p-1">
-              <h5 class="card-title">Waiting</h5>
-              <div class="bg-success text-white card">
-                <h4>Status</h4>
-              </div>
-              <div class="border-warning card">
-                <h1>Empty</h1>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- looping -->
       </div>
     </div>
     <div class="container mt-4">
       <h1 class="text-white">Wait until for 4 players Joining the Game</h1>
-      <button @click="goToPlay" class="btn btn-success mt-4">Start the Game</button>
+      <div v-if="joinUsers.length === 2">
+        <button @click="goToPlay" class="btn btn-success mt-4">Start the Game</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'WaitingRoom',
+  data () {
+    return {
+      image_player: [
+        "https://ih1.redbubble.net/image.1720409113.7485/st,small,507x507-pad,600x600,f8f8f8.jpg",
+        "https://ih1.redbubble.net/image.1720403004.7334/st,small,507x507-pad,600x600,f8f8f8.jpg",
+        "https://ih1.redbubble.net/image.1726787262.2958/st,small,507x507-pad,600x600,f8f8f8.jpg",
+        "https://ih1.redbubble.net/image.1720457610.8739/st,small,507x507-pad,600x600,f8f8f8.jpg"
+      ],
+      image_empty: "https://cdn4.iconfinder.com/data/icons/political-elections/50/48-512.png"
+    }
+  },
   methods: {
     goToPlay () {
-      this.$router.push('/play')
+      this.$socket.emit('startTheGame')
     }
+  },
+  computed: {
+    ...mapState ({
+      joinUsers: 'joinUsers'
+    })
   }
 }
 </script>

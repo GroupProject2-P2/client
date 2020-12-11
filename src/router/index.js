@@ -5,6 +5,7 @@ import Login from '../views/Login'
 import GamePlay from '../views/GamePlay'
 import HomePage from '../views/HomePage'
 import WaitingRoom from '../views/WaitingRoom'
+import Result from '../views/Result'
 
 Vue.use(VueRouter)
 
@@ -41,6 +42,11 @@ const routes = [
     path: '/dasboard',
     name: 'roomDasboard',
     component: RoomDasboard
+  },
+  {
+    path: '/result',
+    name: 'Result',
+    component: Result
   }
 ]
 
