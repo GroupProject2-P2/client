@@ -8,8 +8,12 @@
                 <div class="email mb-3">
                     <input v-model="userName" type="text" name="text" class="container-fluid" placeholder="Insert Username">
                 </div>
-                <div class="button-login row">
-                    <button class="btn btn-lg btn-primary btn-block mt-2 p-2 rounded-pill">Lets Play</button>
+                <div v-if="joinUsers.length !== 4" class="button-login row">
+                  <button class="btn btn-lg btn-primary btn-block mt-2 p-2 rounded-pill">Lets Play</button>
+                </div>
+                <div v-else class="div">
+                  <h1>MAAF RUANGAN SUDAH PENUH</h1>
+                  <small>Silahkan Menunggu Sebentar</small>
                 </div>
             </form>
         </div>

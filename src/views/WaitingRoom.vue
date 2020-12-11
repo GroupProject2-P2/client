@@ -29,7 +29,7 @@
     </div>
     <div class="container mt-4">
       <h1 class="text-white">Wait until for 4 players Joining the Game</h1>
-      <div v-if="joinUsers.length === 2">
+      <div v-if="joinUsers.length === 4">
         <button @click="goToPlay" class="btn btn-success mt-4">Start the Game</button>
       </div>
     </div>
