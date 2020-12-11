@@ -31,15 +31,17 @@ export default {
   },
   methods: {
     insertUser () {
+      localStorage.setItem('username', this.userName)
       this.$socket.emit('login',this.userName)
       this.$router.push('/waitingroom')
+      console.log(this.joinUsers)
     }
   },
   computed: {
     ...mapState ({
-      welcomeMessage: 'welcomeMessage'
+      welcomeMessage: 'welcomeMessage',
+      joinUsers: 'joinUsers'
     })
   }
-
 }
 </script>
