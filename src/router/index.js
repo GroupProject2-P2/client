@@ -3,9 +3,17 @@ import VueRouter from 'vue-router'
 import RoomDasboard from '../views/RoomDasboard'
 import Login from '../views/Login'
 import GamePlay from '../views/GamePlay'
+import HomePage from '../views/HomePage'
+import WaitingRoom from '../views/WaitingRoom'
+
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/',
+    name: 'HomePage',
+    component: HomePage
+  },
   {
     path: '/login',
     name: 'login',
@@ -23,6 +31,11 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/waitingroom',
+    name: 'WaitingRoom',
+    component: WaitingRoom
   },
   {
     path: '/dasboard',
