@@ -9,10 +9,12 @@
                     <h5>Insert Your Name</h5>
                     <input v-model="userName" type="text" name="text" class="container-fluid">
                 </div>
-                <div class="button-login row">
-                    <button class="btn btn-primary mt-3">Lets Play</button>
-                    <div id="emailHelp" class="form-text">
-                    </div>
+                <div v-if="joinUsers.length !== 4" class="button-login row">
+                  <button class="btn btn-primary mt-3">Lets Play</button>
+                </div>
+                <div v-else class="div">
+                  <h1>MAAF RUANGAN SUDAH PENUH</h1>
+                  <small>Silahkan Menunggu Sebentar</small>
                 </div>
             </form>
         </div>

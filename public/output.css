@@ -15,6 +15,10 @@
   justify-content: space-between;
 }
 
+.congrats {
+  width: 500px;
+}
+
 .soal {
   display: flex;
 }
